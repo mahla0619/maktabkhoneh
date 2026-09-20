@@ -1,0 +1,724 @@
+/* ==========================================================
+   محبوب‌ترین دوره‌ها / Mini Slider
+   ========================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================================
+   عنوان
+   ========================================================== */
+
+.title {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   بخش اصلی
+   ========================================================== */
+
+.favirit {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   دسته‌بندی‌ها
+   ========================================================== */
+
+.favirit > .main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    padding: 10px;
+
+    overflow: hidden;
+
+    direction: rtl;
+}
+.favirit > .miniSlider {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    direction: rtl;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 0 10px;
+
+    transition: transform 0.5s ease;
+
+    will-change: transform;
+}
+
+
+.favirit > .miniSlider > .box {
+    flex: 0 0 250px;
+    width: 250px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #eee;
+    border-radius: 15px;
+
+    margin: 10px 0;
+
+    padding: 15px 15px 10px 15px;
+
+    background: #fff;
+
+    cursor: pointer;
+}
+
+
+/* آیتم‌های دسته‌بندی */
+
+.favirit > .main > div {
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: #fff;
+
+    padding: 10px 15px 10px 10px;
+
+    white-space: nowrap;
+
+    position: relative;
+    right: 0;
+
+    direction: rtl;
+
+    box-sizing: border-box;
+
+    flex: 0 0 auto;
+
+    cursor: pointer;
+}
+
+
+/* دکمه همه */
+
+.favirit > .main > .all {
+    background: #000000;
+    color: #fff;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 15px;
+}
+
+
+/* ==========================================================
+   دکمه‌های اسلایدر
+   ========================================================== */
+
+.favirit > .main > .but {
+    gap: 10px;
+
+    border: none;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-right: auto;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+
+/* دکمه مشاهده همه و فلش‌ها */
+
+.favirit > .main > .but > .all,
+.favirit > .main > .but > .right,
+.favirit > .main > .but > .left {
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 5px;
+
+    padding: 10px 15px;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Hover */
+
+.favirit > .main > .but > .right:hover,
+.favirit > .main > .but > .left:hover,
+.favirit > .main > .but > .all:hover {
+
+    background: #f3f5f7;
+}
+
+
+/* ==========================================================
+   Mini Slider
+   ========================================================== */
+
+.favirit > .miniSlider {
+
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    direction: rtl;
+
+    display: flex;
+
+    gap: 10px;
+
+    transition: transform 0.5s ease;
+
+    will-change: transform;
+
+    padding: 0 10px;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================================
+   کارت‌ها
+   ========================================================== */
+
+.favirit > .miniSlider > .box {
+
+    flex: 0 0 250px;
+
+    width: 250px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    border: 1px solid #eee;
+
+    border-radius: 15px;
+
+    margin: 10px 0;
+
+    padding: 15px 15px 10px 15px;
+
+    cursor: pointer;
+
+    background: #fff;
+
+    overflow: hidden;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.favirit > .miniSlider > .box:hover {
+    background: rgb(243, 245, 247);
+}
+
+
+/* ==========================================================
+   عکس کارت
+   ========================================================== */
+
+.favirit > .miniSlider > .box img {
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+}
+
+
+/* ==========================================================
+   نام دوره
+   ========================================================== */
+
+.favirit > .miniSlider > .box > h3 {
+
+    margin: 12px 0 8px 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #212529;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.favirit > .miniSlider > .box > .name {
+
+    color: rgb(108, 117, 125);
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================================
+   اطلاعات دوره
+   ========================================================== */
+
+.favirit > .miniSlider > .box > .data {
+
+    display: flex;
+
+    flex-flow: row wrap;
+
+    gap: 8px;
+
+    margin-bottom: 5px;
+
+    margin-right: 5px;
+
+    font-size: 13px;
+
+    color: rgb(73, 80, 87);
+
+    box-sizing: border-box;
+}
+
+
+.favirit > .miniSlider > .box > .data div {
+
+    background: rgb(243, 245, 247);
+
+    border-radius: 5px;
+
+    padding: 5px;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   قیمت
+   ========================================================== */
+
+.favirit > .miniSlider > .box > .price {
+
+    margin-top: 25px;
+
+    gap: 10px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-end;
+
+    flex-wrap: wrap;
+}
+
+
+.favirit > .miniSlider > .box > .price > div {
+
+    white-space: nowrap;
+
+    font-size: 14px;
+}
+
+
+.favirit > .miniSlider > .box > .price span {
+
+    font-size: 10px;
+
+    color: #fff;
+
+    padding: 5px;
+
+    border-radius: 10px;
+
+    background: rgb(180, 20, 116);
+}
+
+
+/* ==========================================================
+   تبلت
+   ========================================================== */
+
+@media (max-width: 1200px) {
+
+    .favirit > .main {
+
+        gap: 8px;
+
+        padding: 10px;
+
+    }
+
+    .favirit > .main > div {
+
+        padding: 9px 13px;
+
+        font-size: 14px;
+
+    }
+
+    .favirit > .miniSlider > .box {
+
+        flex-basis: 230px;
+
+        width: 230px;
+
+    }
+}
+
+
+/* ==========================================================
+   تبلت کوچک
+   ========================================================== */
+
+@media (max-width: 992px) {
+
+    .favirit > .main {
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        padding: 10px;
+
+        /*
+         * اجازه نمی‌دهیم دسته‌بندی‌ها
+         * از سمت راست بیرون بزنند
+         */
+        overflow: hidden;
+    }
+
+
+    .favirit > .main > div {
+
+        font-size: 13px;
+
+        padding: 8px 12px;
+
+    }
+
+
+    .favirit > .main > .but {
+
+        margin-right: 0;
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+    }
+
+
+    .favirit > .miniSlider {
+
+        gap: 8px;
+
+        padding: 0 8px;
+
+    }
+
+
+    .favirit > .miniSlider > .box {
+
+        flex: 0 0 calc(
+            (100% - 16px) / 3
+        );
+
+        width: calc(
+            (100% - 16px) / 3
+        );
+
+        margin: 8px 0;
+
+    }
+}
+
+
+/* ==========================================================
+   موبایل
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .favirit {
+
+        width: 100%;
+
+        overflow: hidden;
+
+    }
+
+
+    /* ------------------------------------------
+       دسته‌بندی‌ها
+       ------------------------------------------ */
+
+    .favirit > .main {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-start;
+
+        align-items: center;
+
+        gap: 7px;
+
+        padding: 8px;
+
+        /*
+         * خیلی مهم:
+         * اسکرول افقی نداریم
+         */
+        overflow: hidden;
+
+        direction: rtl;
+
+        box-sizing: border-box;
+    }
+
+
+    .favirit > .main > div {
+
+        position: static;
+
+        right: auto;
+
+        font-size: 12px;
+
+        padding: 7px 10px;
+
+        border-radius: 15px;
+
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .favirit > .main > .all {
+
+        padding: 7px 13px;
+
+    }
+
+
+    /* ------------------------------------------
+       دکمه‌ها
+       ------------------------------------------ */
+
+    .favirit > .main > .but {
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: flex-start;
+
+        align-items: center;
+
+        margin: 5px 0 0 0;
+
+        gap: 6px;
+
+    }
+
+
+    .favirit > .main > .but > .all,
+    .favirit > .main > .but > .right,
+    .favirit > .main > .but > .left {
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+
+    }
+
+
+    /* ------------------------------------------
+       کارت‌ها
+       ------------------------------------------ */
+
+    .favirit > .miniSlider {
+
+        width: 100%;
+
+        gap: 10px;
+
+        padding: 0 10px;
+
+        overflow: hidden;
+
+        direction: rtl;
+
+    }
+
+
+    .favirit > .miniSlider > .box {
+
+        /*
+         * فقط یک کارت در هر صفحه
+         */
+        flex: 0 0 calc(100% - 10px);
+
+        width: calc(100% - 10px);
+
+        margin: 8px 0;
+
+        padding: 12px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .favirit > .miniSlider > .box > h3 {
+
+        font-size: 15px;
+
+    }
+
+
+    .favirit > .miniSlider > .box > .data {
+
+        gap: 6px;
+
+        font-size: 12px;
+
+    }
+
+
+    .favirit > .miniSlider > .box > .price {
+
+        margin-top: 18px;
+
+    }
+}
+
+
+/* ==========================================================
+   موبایل خیلی کوچک
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .favirit > .main {
+
+        padding: 7px;
+
+        gap: 6px;
+
+    }
+
+
+    .favirit > .main > div {
+
+        font-size: 11px;
+
+        padding: 6px 9px;
+
+    }
+
+
+    .favirit > .main > .but {
+
+        gap: 5px;
+
+    }
+
+
+    .favirit > .main > .but > .all,
+    .favirit > .main > .but > .right,
+    .favirit > .main > .but > .left {
+
+        padding: 7px 10px;
+
+    }
+
+
+    .favirit > .miniSlider {
+
+        padding: 0 7px;
+
+    }
+
+
+    .favirit > .miniSlider > .box {
+
+        flex: 0 0 calc(100% - 7px);
+
+        width: calc(100% - 7px);
+
+        padding: 10px;
+
+    }
+
+
+    .favirit > .miniSlider > .box > .data div {
+
+        font-size: 11px;
+
+        padding: 4px;
+
+    }
+
+
+    .favirit > .miniSlider > .box > .price > div {
+
+        font-size: 12px;
+
+    }
+}

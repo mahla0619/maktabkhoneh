@@ -1,0 +1,91 @@
+#content>.Category>.box1 {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+
+
+
+
+}
+
+#content>.Category>.box1 div {
+    border: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    flex-flow: column;
+    height: 120px;
+    width: 150px;
+    border-radius: 10px;
+
+}
+
+#content>.Category>.box1 img {
+    transition: .3s;
+}
+
+#content>.Category>.box1 img:hover {
+    transform: scale(1.4);
+}
+
+#content>.Category>.box2 {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+
+
+}
+
+#content>.Category>.box2 div {
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-flow: column;
+    height: 120px;
+    width: 150px;
+    border-radius: 10px;
+
+
+}
+
+#content>.Category>.box2 img {
+    transition: .3s;
+}
+
+#content>.Category>.box2 img:hover {
+    transform: scale(1.4);
+}
+
+@media (max-width: 1110px) {
+    #content>.Category>.box2 div {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1075px) {
+
+
+    #content>.Category>.box1,
+    #content>.Category>.box2 {
+        gap: 10px;
+
+    }
+
+    #content>.Category>.box1 div,
+    #content>.Category>.box2 div {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+}

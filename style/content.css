@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    /* border: 1px solid rgb(157, 255, 0); */
+    height: 1000px;
+    width: 100%;
+}
+
+#content>.slider {
+    /* border: 1px solid red; */
+    height: 350px;
+    width: 95%;
+    margin: 40px auto;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+    position: relative;
+    direction: ltr;
+
+}
+
+#content>.title {
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'iran-sans', 'tahoma', sans-serif;
+    color: #1a1a2e;
+    padding-right: 14px;
+    margin: 10px 40px;
+    border-right: 5px solid #009ca7;
+
+
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== بخش‌های محتوا ===== */
+#content>.Category,
+#content>.favirit,
+#content>.new,
+#content>.hafte,
+#content>.AI,
+#content>.barnamenvisi,
+#content>.narmafzarcarbordi,
+#content>.danrshgahi,
+#content>.masirha,
+#content>.moassesh,
+#content>.dore,
+#content>.demo,
+#content>.comment {
+    min-height: 300px;
+    /* border: 1px solid #e8e8e8; */
+    border-radius: 16px;
+    background: #fff;
+    /* background: #fcfcfc; */
+    /* margin-bottom: 25px; */
+
+    width: 95%;
+    margin: 40px auto;
+
+    /* padding: 18px; */
+    transition: 0.2s;
+
+    position: relative;
+}
+
+/* ===== باکس‌های خاص با ارتفاع متفاوت ===== */
+#content>.comment {
+    min-height: 400px;
+}
+
+
+
+/* ===== بخش دسته‌بندی منتخب ===== */
+#content>.Category {
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #ffffff;
+}
+
+/* ===== بخش محبوب‌ترین دوره‌ها ===== */
+
+#content>.favirit>.main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    gap: 10px;
+    font-size: 15px;
+    margin: 5px;
+    padding: 15px 10px 10px 15px;
+    cursor: pointer;
+}
+
+#content>.favirit>.miniSlider {
+    /* border: 1px solid red; */
+    /* min-height: auto; */
+    padding-bottom: 35px;
+
+
+}
+
+/* ===== بخش مسیرهای یادگیری ===== */
+/* برای اینکه کتگوری‌های داخل favirit به‌خوبی نمایش داده بشن */
+#content>.favirit>.main {
+    display: flex;
+    justify-content: end;
+}
+
+#content>.favirit>.Category>.box1,
+#content>.favirit>.Category>.box2 {
+    position: absolute;
+    top: 90px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#content>.favirit>.Category>.box1>div {
+    /* border: 1px solid #eee; */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    flex-flow: column;
+    /* white-space: nowrap; */
+    height: 120px;
+    width: 150px;
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+@media (max-width: 1150px) {
+
+    #content>.slider {
+        /* height: 100%; */
+        width: 95%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 1050px) {
+    #content {
+        height: auto;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    #content>.slider {
+        /* height: 100%; */
+        width: 99%;
+    }
+}
+
+@media (max-width: 630px) {
+    #content>.slider {
+        /* height: 100%; */
+        width: 99%;
+    }
+}

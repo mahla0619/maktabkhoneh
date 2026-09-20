@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .slider {
+            border: 1px solid red;
+            height: 300px;
+            width: 800px;
+            margin: 100px auto;
+            /* margin-top: 10px; */
+
+            /* display: flex;
+            justify-content: center; */
+            /* margin: 40px; */
+            border-radius: 15px;
+
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider>#gal {
+            /* border: 1px solid red; */
+            width: 500%;
+            height: 100%;
+
+            /* margin: 0;
+            padding: 0; */
+            position: relative;
+            left: 0;
+            transition: .6s;
+
+
+        }
+
+        .slider>#gal>.items {
+            /* width: 20%; */
+            height: 100%;
+            width: 20%;
+            float: left;
+
+
+        }
+
+        .slider>#gal>.items>img {
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; عکس از وسط بزرگتر میکنه */
+            /* display:block; */
+
+        }
+
+        .slider>.right,
+        .slider>.left {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            /* border: 1px solid rgba(255, 255, 255, 0.6); */
+            border-radius: 50px;
+            background-color: rgb(87, 87, 87);
+            /* color: rgba(0, 0, 0, 0.6); */
+            background-size: 20%;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transition: 0.3s;
+            opacity: 0;
+
+        }
+
+        .slider:hover>.right,
+        .slider:hover>.left {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .slider>.right {
+            right: 20px;
+            background-image: url("../maktabkhoneh/images/controls.png");
+            /* background-size: 60%; */
+            background-position: -35px 0;
+            background-size: 64px 64px;
+            /* سایز عکس داخل دکمه */
+        }
+
+        .slider>.left {
+            right: 60px;
+            background-image: url("../maktabkhoneh/images/controls.png");
+            background-position: 0 0;
+            background-size: 64px 64px;
+        }
+
+
+
+        #but {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 40px;
+            /* background: red; */
+            top: -40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            align-items: center;
+
+        }
+
+        #but>li {
+            width: 7px;
+            height: 7px;
+            background: #333;
+            transition: 0.3s;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #but>li:hover {
+            background: rgb(255, 255, 255);
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider" id="slider">
+        <div id="gal">
+            <div class="items">
+                <img src="images/01.webp" alt="اسلایدر">
+            </div>
+            <div class="items">
+                <img src="images/02.webp" alt="اسلایدر">
+            </div>
+            <div class="items">
+                <img src="images/03.webp" alt="اسلایدر">
+            </div>
+            <div class="items">
+                <img src="images/04.webp" alt="اسلایدر">
+            </div>
+            <div class="items">
+                <img src="images/05" alt="اسلایدر">
+            </div>
+        </div>
+        <div class="right" id="rightBtn"> </div>
+
+        <div class="left" id="leftBtn"> </div>
+
+        <UL id="but">
+            <li onclick="move(0)"></li>
+            <li onclick="move(1)"></li>
+            <li onclick="move(2)"></li>
+            <li onclick="move(3)"></li>
+            <li onclick="move(4)"></li>
+        </UL>
+    </div>
+
+
+
+
+    <script>
+
+        pos = 0;
+        const totalSlides = 5;
+        let autoPlayInterval = null;
+        const gal = document.getElementById('gal');
+        const rightBtn = document.getElementById('rightBtn');
+        const leftBtn = document.getElementById('leftBtn');
+        const bullets = document.querySelectorAll('#but li');
+
+
+        // ===== تابع حرکت به اسلاید مشخص =====
+        function moveTo(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            pos = -100 * index;
+            gal.style.left = pos + '%';
+
+            // بروزرسانی دکمه‌های پایین
+            bullets.forEach((li, i) => {
+                li.classList.toggle('active', i === index);
+            });
+
+        }
+        function move(x) {
+
+            pos = -100 * x;
+            gal.style.left = pos + "%";
+
+        }
+
+        rightBtn.onclick = function () {
+            if (pos > -400) {
+                pos = pos - 100;
+                gal.style.left = pos + "%";
+                updateActiveBullet();
+            } else if (pos == -400) {
+                pos = 0;
+                gal.style.left = pos + "%";
+                updateActiveBullet();
+            }
+        }
+
+        leftBtn.onclick = function () {
+            if (pos < 0) {
+                pos = pos + 100;
+                gal.style.left = pos + "%";
+                updateActiveBullet();
+            }
+        }
+
+        function updateActiveBullet() {
+            const currentIndex = Math.abs(pos / 100);
+            bullets.forEach((li, index) => {
+                li.classList.toggle('active', index === currentIndex);
+            });
+        }
+        // ===== پخش خودکار =====
+        function startAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(() => {
+                const currentIndex = Math.abs(pos / 100);
+                moveTo(currentIndex + 1);
+            }, 3000); // هر 3 ثانیه
+        }
+
+        function resetAutoPlay() {
+            startAutoPlay();
+        }
+
+        // ===== توقف خودکار وقتی ماوس روی اسلایدر هست =====
+        const slider = document.getElementById('slider');
+        slider.addEventListener('mouseenter', () => {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+
+        // ===== شروع =====
+        moveTo(0);
+        startAutoPlay();
+
+    </script>
+
+
+
+    </script>
+
+
+</body>
+
+</html>
