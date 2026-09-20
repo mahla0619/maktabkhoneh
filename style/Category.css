@@ -68,24 +68,173 @@
     transform: scale(1.4);
 }
 
-@media (max-width: 1110px) {
-    #content>.Category>.box2 div {
-        white-space: nowrap;
-    }
+/* فقط مسیرهای یادگیری */
+
+#categorySlider3 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-@media (max-width: 1075px) {
+#categorySlider3>.box1 {
+    position: relative !important;
+    top: 0 !important;
 
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    width: max-content !important;
+    max-width: none !important;
+
+    overflow: visible !important;
+
+    gap: 10px !important;
+
+    transition: transform 0.5s ease;
+}
+
+#categorySlider3>.box1>div {
+    flex: 0 0 calc((100vw - 170px) / 8) !important;
+    width: calc((100vw - 170px) / 8) !important;
+}
+
+@media (max-width: 1110px) {
 
     #content>.Category>.box1,
     #content>.Category>.box2 {
         gap: 10px;
-
     }
 
     #content>.Category>.box1 div,
     #content>.Category>.box2 div {
-        white-space: nowrap;
+        width: 130px;
+        height: 115px;
         font-size: 14px;
+
+        gap: 7px;
+
+        flex-shrink: 0;
     }
+
+    #content>.Category>.box1 img,
+    #content>.Category>.box2 img {
+        max-width: 55px;
+        max-height: 55px;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    #content>.Category>.box1,
+    #content>.Category>.box2 {
+        gap: 7px;
+    }
+
+    #content>.Category>.box1 div,
+    #content>.Category>.box2 div {
+        width: 115px;
+        height: 105px;
+        font-size: 13px;
+
+        gap: 6px;
+    }
+
+    #content>.Category>.box1 img,
+    #content>.Category>.box2 img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    #content>.Category>.box1,
+    #content>.Category>.box2 {
+        gap: 5px;
+    }
+
+    #content>.Category>.box1 div,
+    #content>.Category>.box2 div {
+        width: 100px;
+        height: 95px;
+        font-size: 12px;
+
+        gap: 5px;
+    }
+
+    #content>.Category>.box1 img,
+    #content>.Category>.box2 img {
+        max-width: 42px;
+        max-height: 42px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    #content>.Category>.box1,
+    #content>.Category>.box2 {
+        gap: 4px;
+    }
+
+    #content>.Category>.box1 div,
+    #content>.Category>.box2 div {
+        width: 90px;
+        height: 90px;
+        font-size: 11px;
+
+        gap: 4px;
+    }
+
+    #content>.Category>.box1 img,
+    #content>.Category>.box2 img {
+        max-width: 38px;
+        max-height: 38px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    #content>.Category>.box1,
+    #content>.Category>.box2 {
+        gap: 3px;
+    }
+
+    #content>.Category>.box1 div,
+    #content>.Category>.box2 div {
+        width: 80px;
+        height: 82px;
+        font-size: 10px;
+
+        gap: 3px;
+    }
+
+    #content>.Category>.box1 img,
+    #content>.Category>.box2 img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+}
+
+/* =========================
+   Dark Mode - Categories
+========================= */
+
+body.dark #content>.Category {
+    background-color: #1b1b1b;
+}
+
+
+body.dark #content>.Category>.box1 div,
+body.dark #content>.Category>.box2 div {
+    background-color: #1b1b1b;
+    border-color: #333;
+}
+
+
+body.dark #content>.Category span {
+    color: #f1f1f1;
 }

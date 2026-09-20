@@ -171,26 +171,70 @@ body {
 
 }
 
-#header>.main>.Category>.login {
+/* =========================
+   Header Actions
+========================= */
+
+#header>.main>.Category>.header-actions {
     position: absolute;
     left: 20px;
 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Login */
+
+#header>.main>.Category>.header-actions>.login {
     height: 40px;
 
     padding: 0 10px;
 
     border-radius: 8px;
     border: none;
-    background: rgb(0, 156, 167);
 
+    background: rgb(0, 156, 167);
     color: #fff;
 
     cursor: pointer;
+
     transition: .3s;
 }
 
-#header>.main>.Category>.login:hover {
+#header>.main>.Category>.header-actions>.login:hover {
     background: rgb(2, 130, 139);
+}
+
+
+/* Theme Button */
+
+#header>.main>.Category>.header-actions>.theme-toggle {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    background: #fff;
+    color: #333;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#header>.main>.Category>.header-actions>.theme-toggle:hover {
+    background: #eff3fc;
+}
+
+#header>.main>.Category>.header-actions>.theme-toggle>.theme-icon {
+    font-size: 18px;
 }
 
 
@@ -411,4 +455,115 @@ body {
         position: relative;
         left: 280px;
     }
+}
+
+
+/* =========================
+   Dark Mode - Header
+========================= */
+
+body.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+
+/* Header */
+
+body.dark #header {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+
+/* Header main */
+
+body.dark #header>.main {
+    background-color: #121212;
+}
+
+
+/* Header category */
+
+body.dark #header>.main>.Category {
+    background-color: #121212;
+}
+
+
+/* Search */
+
+body.dark #header>.main>.Category>.search-box input {
+    background-color: #242424;
+    border-color: #3a3a3a;
+    color: #fff;
+}
+
+body.dark #header>.main>.Category>.search-box>.placeholder {
+    color: #aaa;
+}
+
+body.dark #header>.main>.Category>.search-box>.placeholder span {
+    color: rgb(0, 190, 200);
+}
+
+
+/* Plus */
+
+body.dark #header>.main>.Category>.plas>.matn:hover {
+    background-color: #242424;
+    border-color: #444;
+}
+
+
+/* Login */
+
+body.dark #header>.main>.Category>.header-actions>.login {
+    background-color: rgb(0, 156, 167);
+}
+
+
+/* Theme button */
+
+body.dark #header>.main>.Category>.header-actions>.theme-toggle {
+    background-color: #242424;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark #header>.main>.Category>.header-actions>.theme-toggle:hover {
+    background-color: #333;
+}
+
+
+/* Bottom menu */
+
+body.dark #header>.main>.bootem {
+    border-color: #333;
+
+
+}
+
+body.dark #header>.main>.bootem>.menu-item {
+    color: #ddd;
+
+
+}
+
+body.dark #header>.main>.bootem>.menu-item:hover {
+    color: #242424;
+    background-color: #ddd;
+}
+
+
+/* Dropdown */
+
+body.dark #header>.main>.bootem>.menu-item>.smenu {
+    background-color: #1b1b1b;
+}
+
+
+/* Scroll header */
+
+body.dark #header.scroll-header {
+    background-color: #121212;
 }

@@ -177,3 +177,62 @@ body {
         width: 99%;
     }
 }
+
+
+/* =========================
+   Dark Mode - Content
+========================= */
+
+body.dark #content {
+    background-color: #121212;
+}
+
+
+/* Titles */
+
+body.dark #content .title {
+    color: #f1f1f1;
+}
+
+
+/* Sections */
+
+body.dark #content>.Category,
+body.dark #content>.favirit {
+    background-color: #1b1b1b;
+    color: #f1f1f1;
+}
+
+
+/* Category boxes */
+
+body.dark #content>.Category>.box1 div,
+body.dark #content>.Category>.box2 div {
+    border-color: #333;
+}
+
+
+/* Course cards */
+
+body.dark #content .miniSlider .box {
+    background-color: #1b1b1b;
+    border-color: #333;
+    color: #f1f1f1;
+}
+
+
+/* Course card text */
+
+body.dark #content .miniSlider .box h3,
+body.dark #content .miniSlider .box .name,
+body.dark #content .miniSlider .box .data,
+body.dark #content .miniSlider .box .price {
+    color: #f1f1f1;
+}
+
+
+/* Category text */
+
+body.dark #content .Category span {
+    color: #f1f1f1;
+}

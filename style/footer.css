@@ -5,138 +5,542 @@
     /* outline: 1px solid red; */
 }
 
+
 body {
     margin: 0;
     padding: 0;
 }
 
+
+/* =========================
+   Footer
+========================= */
+
 #footer {
-    /* border: 1px solid rgb(0, 119, 255); */
-    height: 700px;
+    height: auto;
+    min-height: 700px;
     width: 100%;
 }
 
-#footer>.demo {
-    /* border: 1px solid red; */
 
+/* =========================
+   Demo
+========================= */
+
+#footer>.demo {
     height: 80px;
-    width: 100vw;
+    width: 100%;
+
     background-color: rgb(243, 245, 247);
 
     display: flex;
     align-items: center;
+
     gap: 20px;
 
     padding-right: 60px;
 }
 
+
 #footer>.demo button {
     border: 1px solid #e0e0e0;
     border-radius: 3px;
+
     padding: 5px 15px;
+
     background-color: #fff;
+
     cursor: pointer;
 }
+
 
 #footer>.demo span {
     font-weight: bold;
 }
 
+
 #footer>.demo>span .color {
     color: rgb(0, 156, 167);
 }
 
+
+/* =========================
+   Footer Items
+========================= */
+
 #footer>.box1 {
-    /* border: 1px solid #171aca; */
-    /* height: 200px; */
+
     width: 100%;
-    /* position: relative; */
 
     display: flex;
     flex-direction: row;
 
     gap: 200px;
+
     padding-right: 60px;
     padding-top: 60px;
 
 }
 
+
 #footer>.box1>.items {
-    /* position: absolute; */
-    /* border: 1px solid #17cab2; */
 
     height: 200px;
     width: 150px;
+
     display: flex;
     flex-flow: column;
+
     gap: 10px;
 
 }
 
+
 #footer>.box1>.items h3 {
+
     padding-right: 30px;
+
     cursor: pointer;
 
 }
+
 
 #footer>.box1>.items div {
+
     cursor: pointer;
+
 }
 
+
+/* =========================
+   Download
+========================= */
+
 #footer>.Download {
+
     height: 80px;
-    width: 1150px;
+
+    width: calc(100% - 160px);
+
+    max-width: 1150px;
+
     border-radius: 10px;
+
     background-color: #000000;
 
     display: flex;
+
     gap: 10px;
+
     align-items: center;
+
     margin-right: 80px;
+
     color: #fff;
+
     position: relative;
 
 }
 
+
 #footer>.Download>.logo {
+
     margin-right: 20px;
 
 }
 
+
 #footer>.Download>.mtn {
 
     color: #fff;
+
     font-weight: bold;
+
     margin-right: 1px;
 
 }
 
+
 #footer>.Download>.btn {
+
     height: 60%;
 
     display: flex;
+
     gap: 20px;
+
     left: 20px;
 
     position: absolute;
+
 }
 
+
 #footer>.Download>.btn button {
+
     padding: 0 50px;
+
     cursor: pointer;
+
     border-radius: 10px;
+
     border: none;
+
     background-color: #ffffff;
 
 }
 
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1250px) {
+
+    #footer>.box1>.items h3,
+    #footer>.box1>.items div {
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 1150px) {
-    #footer>.box1>.items h3 ,#footer>.box1>.items div{
-     white-space: nowrap;
+
+    #footer>.box1 {
+        gap: 100px;
+        padding-right: 40px;
+    }
+
+
+    #footer>.box1>.items {
+        width: 140px;
+    }
+
+
+    #footer>.box1>.items h3,
+    #footer>.box1>.items div {
+
+        white-space: nowrap;
 
     }
-    #footer>.Download{
-        /* width: 80px;
-        margin-right: 10px; */
+
+
+    #footer>.Download {
+
+        width: calc(100% - 80px);
+
+        margin-right: 40px;
+
     }
+
+
+    #footer>.Download>.btn button {
+
+        padding: 0 25px;
+
+    }
+
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+
+    #footer>.demo {
+
+        padding-right: 30px;
+
+    }
+
+
+    #footer>.box1 {
+
+        gap: 40px;
+
+        padding-right: 30px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    #footer>.box1>.items {
+
+        width: 150px;
+
+    }
+
+
+    #footer>.Download {
+
+        width: calc(100% - 60px);
+
+        margin-right: 30px;
+
+    }
+
+
+    #footer>.Download>.btn {
+
+        gap: 10px;
+
+        left: 10px;
+
+    }
+
+
+    #footer>.Download>.btn button {
+
+        padding: 0 15px;
+
+    }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    #footer {
+
+        min-height: auto;
+
+    }
+
+
+    /* Demo */
+
+    #footer>.demo {
+
+        height: auto;
+
+        min-height: 80px;
+
+        padding: 15px 20px;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    #footer>.demo span {
+
+        font-size: 14px;
+
+    }
+
+
+    #footer>.demo button {
+
+        padding: 5px 10px;
+
+    }
+
+
+    /* Items */
+
+    #footer>.box1 {
+
+        padding: 35px 20px;
+
+        gap: 30px;
+
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+
+    }
+
+
+    #footer>.box1>.items {
+
+        width: calc(50% - 15px);
+
+        height: auto;
+
+        min-height: 170px;
+
+    }
+
+
+    #footer>.box1>.items h3 {
+
+        padding-right: 0;
+
+        font-size: 15px;
+
+    }
+
+
+    #footer>.box1>.items div {
+
+        font-size: 13px;
+
+    }
+
+
+    /* Download */
+
+    #footer>.Download {
+
+        width: calc(100% - 40px);
+
+        height: auto;
+
+        min-height: 150px;
+
+        margin-right: 20px;
+
+        padding: 20px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    #footer>.Download>.logo {
+
+        margin-right: 0;
+
+    }
+
+
+    #footer>.Download>.mtn {
+
+        text-align: center;
+
+    }
+
+
+    #footer>.Download>.btn {
+
+        position: static;
+
+        width: 100%;
+
+        height: auto;
+
+        display: flex;
+
+        justify-content: center;
+
+        gap: 10px;
+
+    }
+
+
+    #footer>.Download>.btn button {
+
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 10px;
+
+    }
+
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+
+    #footer>.box1 {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+    }
+
+
+    #footer>.box1>.items {
+
+        width: 100%;
+
+        min-height: auto;
+
+    }
+
+
+    #footer>.Download {
+
+        min-height: 180px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    #footer>.Download>.btn {
+
+        flex-direction: column;
+
+    }
+
+
+    #footer>.Download>.btn button {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================
+   Dark Mode - Footer
+========================= */
+
+body.dark #footer {
+
+    background-color: #111;
+
+    color: #f1f1f1;
+
+}
+
+
+body.dark #footer .demo {
+
+    background-color: #1b1b1b;
+
+    color: #f1f1f1;
+
+}
+
+
+body.dark #footer .items {
+
+    color: #ddd;
+
+}
+
+
+body.dark #footer .items h3 {
+
+    color: #fff;
+
+}
+
+
+body.dark #footer .Download {
+
+    background-color: #000;
+
+    color: #fff;
+
 }
